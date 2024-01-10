@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>Randevu Formu</title>
+    <style>
+        body {
+            background-image: url("doktorlarduvar.jpg");
+            background-size: cover; 
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        #randevuFormu {
+            width: 800px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <form id="randevuFormu">
+        <label for="name">Ad Soyad:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="yas">Yaş:</label>
+        <input type="text" id="yaş" name="yaş" required>
+
+        <label for="cinsiyet">Cinsiyet:</label>
+        <select id="cinsiyet" name="cinsiyet" required>
+            <option value="Kadın">Kadın</option>
+            <option value="Erkek">Erkek</option>
+        </select>    
+
+        <label for="telefon">Telefon:</label>
+        <input type="text" id="telefon" name="telefon" required>
+
+        <label for="bölüm">Bölüm:</label>
+        <select id="bölüm" name="bölüm" required>
+            <option value="Ağız ve Diş Sağlığı">Ağız ve Diş Sağlığı</option>
+            <option value="Beyin ve Sinir Cerrahisi">Beyin ve Sinir Cerrahisi</option>
+            <option value="Dermatoloji">Dermatoloji</option>
+            <option value="Genel Cerrahi">Genel Cerrahi</option>
+            <option value="Göğüs Hastalıkları">Göğüs Hastalıkları</option>
+            <option value="Göz Hastalıkları">Göz Hastalıkları</option>
+            <option value="Kalp ve Damar Cerrahisi">Kalp ve Damar Cerrahisi</option>
+            <option value="Kulak Burun Boğaz">Kulak Burun Boğaz</option>
+            <option value="Kadın Hastalıkları ve Doğum">Kadın Hastalıkları ve Doğum</option>
+            <option value="Psikiyatri">Psikiyatri</option>
+            <option value="Radyoloji">Radyoloji</option>
+        </select>        
+        <label for="hastaşikayetleri">Hasta Şikayetleri:</label>
+        <textarea cols="100" rows="10" id="hastaşikayetleri" name="hastaşikayetleri" required></textarea>
+
+        <button type="button" onclick="onay()">Randevu Al</button>
+    </form>
+    <script>
+        function onay() {
+            var name = document.getElementById("name").value;
+            var yaş = document.getElementById("yaş").value;
+            var cinsiyet= document.getElementById("cinsiyet").value;
+            var telefon = document.getElementById("telefon").value;
+            var bölüm = document.getElementById("bölüm").value;
+            var hastaşikayetleri = document.getElementById("hastaşikayetleri").value;
+            alert("Randevu bilgileriniz gönderildi. Gün içerisinde size randevu tarihi ve saati hakkında SMS'ten bilgi vereceğiz. İyi Günler");
+        }
+    </script>
+</body>
+</html>
